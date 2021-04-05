@@ -1,23 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Nav from './components/Nav';
+import Projects from './components/Projects';
+import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
+
+  const categories = [
+    {
+      name: 'About'
+    },
+    {
+      name: 'Projects'
+    },
+    {
+      name: 'Contact'
+    },
+  ]
+
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
+  function renderCategory(currentCategory) {
+    
+    if (currentCategory.name === 'Projects') {
+      return (
+        <Projects />
+      );
+    } else if (currentCategory.name === 'About') {
+      return (
+        <About />
+      );
+    } else if (currentCategory.name === 'Contact') {
+      return (
+        <Contact />
+      )
+    } 
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
+      ></Nav>
+      <main>
+        {renderCategory(currentCategory)}
+      </main>
     </div>
   );
 }
