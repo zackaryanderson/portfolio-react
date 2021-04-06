@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import pdf from "../../assets/resume/Resume2021.pdf";
 
 
@@ -7,7 +7,10 @@ const Nav = (props) => {
     const { categories = [], setCurrentCategory, currentCategory } = props;
 
     const bg = currentCategory.name.toLowerCase() + '-color';
-    console.log(bg);
+
+    useEffect(() => {
+        document.title = (currentCategory.name);
+    }, [currentCategory]);
 
     return (
         <header className={`flex-row px-2 ${bg}`}>
