@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
+import img from "../../assets/images/zackaryanderson.jpg";
 
 function ContactForm() {
 
@@ -39,14 +40,35 @@ function ContactForm() {
     }
 
     return (
-        <section>
-            <h1>Contact Me</h1>
-            <form id="contact-form" onSubmit={handleSubmit} >
-                <div>
+        <section className="about">
+            <div className="container">
+                <div className="row center">
+                    <img className="round" src={img} alt="Zack Anderson" />
+                    <div >
+                        <div className="card-body">
+                            <div className="card-title">Professionally:</div>
+                            <p>
+                                I am an engineer and a developer, and I look to keep life
+                                interesting through learning and exploring. I strive to push myself and those around me
+                                to
+                                achieve more and to grow as we
+                                do. I look to leave projects better than I found them and to perform at the highest
+                                standard
+                                possible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container">
+            <h1 className="mx-2">Contact Me</h1>
+            <form id="contact-form"onSubmit={handleSubmit} >
+                <div className="my-1">
                     <label htmlFor="name">Name:</label>
                     <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
                 </div>
-                <div>
+                <div className="my-1">
                     <label htmlFor="email">Email address:</label>
                     <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
                 </div>
@@ -61,6 +83,7 @@ function ContactForm() {
                 )}
                 <button type="submit">Submit</button>
             </form>
+            </div>
         </section>
     )
 }

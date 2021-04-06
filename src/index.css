@@ -19,14 +19,6 @@ code {
   box-sizing: border-box;
 }
 
-html {
-  scroll-snap-type: y mandatory
-}
-
-section {
-  scroll-snap-align: start;
-}
-
 :root {
   --primary-color: #FFBA49;
   --secondary-color: #20A39E;
@@ -52,7 +44,7 @@ section h2 {
 }
 
 .hero{
-  height: 98vh;
+  height: 96vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,8 +61,12 @@ section h2 {
 
 /* projects */
 .projects {
-  height: 100vh;
+  height: 108vh;
   background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .projects-color {
@@ -78,7 +74,12 @@ section h2 {
 }
 
 .project {
-  overflow: hidden;
+  border-radius: 15px;
+  height: 25vh;
+  width: 38vw;
+  border: 1px solid black;
+  margin-left: 10px;
+  align-self: center;
 }
 
 .projects .card { 
@@ -86,33 +87,17 @@ section h2 {
 }
 
 .project img {
-  filter: none;
-  transition: 0.5s;
   border-radius: 15px;
+  width: 38vw;
   height: 25vh;
-  border: 1px solid black;
-}
-
-.project:hover img{
-  filter: blur(6px);
-  transition: 0.5s;
-  opacity: 0.9;
 }
 
 .project h3, .project p {
-  position: relative;
-  top: 500px;
-  transition: 1s;
-  z-index: 1;
-}
-
-.project:hover h3{
-  top: 0;
-  transition: 0.75s;
+  
 }
 
 .project:hover p {
-  top: 0;
+  top: -4vh;
   transition: 0.75s;
   transition-delay: 0.1s;
 }
@@ -129,7 +114,7 @@ section h2 {
 }
 
 /* about me */
-#about {
+.about {
   height: 100vh;
   background-color: var(--tertiary-color);
 }
@@ -153,9 +138,50 @@ section h2 {
   padding: 0;
 }
 
+form {
+  width: 40%;
+  margin: 3vh;
+}
+
+button {
+	background: var(--primary-color);
+	border: 0;
+	border-radius: 5px;
+	color:black;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 30px;
+	padding: 10px 15px;	
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.25rem;
+  border: 1px solid var(--dark);
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+input:focus {
+  border: 1px solid var(--secondary);
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+}
+
+textarea {
+	width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+  padding: 5px;
+}
+
 .center {
+  display: flex;
   justify-content: center;
-  margin-top: 4vh;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-bottom: 1vh;
 }
 
 svg {
@@ -164,9 +190,32 @@ svg {
 }
 
 a {
-  /* color: white; */
+  color: white;
   text-decoration: none;
 }
+
+header h2 a {
+  color: black;
+}
+
+span {
+  color: white;
+  text-decoration: none;
+}
+
+span:hover {
+  color: var(--fifth-color);
+  text-decoration: none;
+}
+
+footer {
+  border-top: 1px solid black;
+}
+
+.about img {
+  max-height: 20vh;
+}
+
 
 a:hover {
   color: var(--fifth-color);
@@ -195,6 +244,8 @@ nav  li {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  border: 2px solid black;
+  border-radius: 15px;
 }
 
 .flex-row {
