@@ -14,7 +14,7 @@
   
   ![License Badge](https://img.shields.io/badge/license-MIT-brightgreen)
   
-  ![ScreenShot](./src/assets/images/screenShotReact)
+  ![ScreenShot](./src/assets/images/screenShotReact.png)
   
 
   
